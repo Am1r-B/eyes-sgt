@@ -4,12 +4,13 @@ function love.draw()
   local eyeX = 200
   local eyeY = 200
   
-  -- x distance between mouse and center of eye
+  -- x distance between cursor and center of eye
   local distanceX = love.mouse.getX() - eyeX
   
-  -- y distance between mouse and center of eye
+  -- y distance between cursor and center of eye
   local distanceY = love.mouse.getY() - eyeY
   
+  -- straight-line distance between cursor and eye
   local distance = math.sqrt(distanceX^2 + distanceY^2)
   
   -- draw eye(white part of eye)
