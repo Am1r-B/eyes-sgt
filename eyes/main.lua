@@ -31,15 +31,4 @@ function love.draw()
   
   drawEye(200, 200)
   drawEye(320, 200)
-  --[[
-  -- write current info on screen
-  love.graphics.setColor(1, 1, 1)
-  love.graphics.print(table.concat({
-    "Distance X: " .. distanceX,
-    "Distance Y: " .. distanceY,
-    "Distance: " .. distance,
-    "Angle: " .. angle,
-    'cos(angle): ' .. math.cos(angle),
-    'sin(angle): ' .. math.sin(angle)
-  }, "\n"))]]
 end
