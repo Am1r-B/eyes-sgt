@@ -11,7 +11,7 @@ function love.draw()
   local distanceY = love.mouse.getY() - eyeY
   
   -- straight-line distance between cursor and eye
-  local distance = math.sqrt(distanceX^2 + distanceY^2)
+  local distance = math.min(math.sqrt(distanceX^2 + distanceY^2), 30)
   
   -- angle between cursor and eye
   local angle = math.atan2(distanceY, distanceX)
