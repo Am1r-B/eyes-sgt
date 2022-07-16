@@ -1,7 +1,30 @@
 function love.draw()
-  love.graphics.setColor(1, 1, 1)
-  love.graphics.circle("fill", 200, 200, 50)
   
+  -- location of eye
+  local eyeX = 200
+  local eyeY = 200
+  
+  -- x distance between mouse and center of eye
+  local distanceX = love.mouse.getX() - eyeX
+  
+  -- y distance between mouse and center of eye
+  local distanceY = love.mouse.getY() - eyeY
+  
+  local distance = math.sqrt(distanceX^2 + distanceY^2)
+  
+  -- draw eye(white part of eye)
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.circle("fill", eyeX, eyeY, 50)
+  
+  -- draw pupil of eye
   love.graphics.setColor(0, 0, .4)
   love.graphics.circle("fill", 200, 200, 15)
+  
+  -- write current info on screen
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.print(table.concat({
+    "Distance X: " .. distanceX,
+    "Distance Y: " .. distanceY,
+    "Distance: " .. distance
+  }, "\n"))
 end
