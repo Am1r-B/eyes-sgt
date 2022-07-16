@@ -13,6 +13,8 @@ function love.draw()
   -- straight-line distance between cursor and eye
   local distance = math.sqrt(distanceX^2 + distanceY^2)
   
+  local angle = math.atan2(distanceY, distanceX)
+  
   -- draw eye(white part of eye)
   love.graphics.setColor(1, 1, 1)
   love.graphics.circle("fill", eyeX, eyeY, 50)
@@ -26,6 +28,7 @@ function love.draw()
   love.graphics.print(table.concat({
     "Distance X: " .. distanceX,
     "Distance Y: " .. distanceY,
-    "Distance: " .. distance
+    "Distance: " .. distance,
+    "Angle: " .. angle
   }, "\n"))
 end
